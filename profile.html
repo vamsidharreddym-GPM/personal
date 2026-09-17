@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Vamsidhar Reddy — Business Development, Growth, Sales Strategy, Marketing and Product Management." />
+  <title>Vamsidhar Reddy — Growth, Sales & Product</title>
+  <style>
+    :root{
+      --bg:#f5f5f7;
+      --surface:rgba(255,255,255,.76);
+      --surface-solid:#ffffff;
+      --text:#1d1d1f;
+      --muted:#6e6e73;
+      --line:rgba(0,0,0,.09);
+      --accent:#0071e3;
+      --accent-soft:#e8f2ff;
+      --shadow:0 18px 50px rgba(0,0,0,.07);
+      --radius:28px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Inter,Helvetica,Arial,sans-serif;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(0,113,227,.09), transparent 30%),
+        radial-gradient(circle at 100% 10%, rgba(125,90,255,.08), transparent 24%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{color:inherit;text-decoration:none}
+    a:focus-visible, button:focus-visible{outline:3px solid rgba(0,113,227,.35);outline-offset:4px}
+
+    .shell{width:min(calc(100% - 32px), var(--max));margin:auto}
+
+    .nav-wrap{
+      position:sticky;top:0;z-index:50;
+      padding:14px 0;
+      backdrop-filter:saturate(180%) blur(18px);
+      -webkit-backdrop-filter:saturate(180%) blur(18px);
+      background:linear-gradient(to bottom, rgba(245,245,247,.9), rgba(245,245,247,.65));
+      border-bottom:1px solid rgba(0,0,0,.04);
+    }
+
+    nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:700;letter-spacing:-.03em;font-size:18px}
+    .nav-links{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:14px}
+    .nav-links a:hover{color:var(--text)}
+    .nav-cta{
+      padding:10px 16px;border-radius:999px;background:var(--text);color:#fff;font-weight:600;
+      box-shadow:0 6px 18px rgba(0,0,0,.12)
+    }
+
+    .hero{padding:84px 0 44px}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--muted);font-weight:600;font-size:14px;margin-bottom:18px}
+    .dot{width:9px;height:9px;border-radius:50%;background:#34c759;box-shadow:0 0 0 5px rgba(52,199,89,.10)}
+    h1{
+      max-width:980px;margin:0;
+      font-size:clamp(52px,8vw,108px);
+      line-height:.94;letter-spacing:-.065em;font-weight:750;
+    }
+    .gradient-word{
+      background:linear-gradient(90deg,#0071e3 0%,#6e5cff 50%,#b14cff 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .hero-sub{
+      max-width:800px;margin:30px 0 0;
+      font-size:clamp(20px,2.8vw,30px);line-height:1.28;letter-spacing:-.025em;color:#424245;
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:999px;font-weight:650;font-size:15px;transition:.2s ease}
+    .btn.primary{background:var(--accent);color:#fff;box-shadow:0 10px 30px rgba(0,113,227,.22)}
+    .btn.primary:hover{transform:translateY(-1px);background:#0077ed}
+    .btn.secondary{background:rgba(255,255,255,.72);border:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.04)}
+    .btn.secondary:hover{background:#fff;transform:translateY(-1px)}
+
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+    .metric{padding:24px;border-radius:22px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(18px)}
+    .metric strong{display:block;font-size:34px;letter-spacing:-.04em;line-height:1.1}
+    .metric span{display:block;margin-top:8px;color:var(--muted);font-size:14px}
+
+    section{padding:44px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:22px}
+    .kicker{font-size:13px;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+    h2{margin:6px 0 0;font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:-.05em}
+    .section-copy{max-width:560px;color:var(--muted);font-size:17px}
+
+    .about-card{
+      display:grid;grid-template-columns:1.35fr .65fr;gap:18px;
+      padding:clamp(24px,4vw,46px);border-radius:var(--radius);
+      background:linear-gradient(145deg,rgba(255,255,255,.92),rgba(255,255,255,.64));
+      border:1px solid var(--line);box-shadow:var(--shadow)
+    }
+    .about-card p{margin:0;font-size:clamp(20px,2.3vw,29px);line-height:1.4;letter-spacing:-.02em}
+    .chips{display:flex;flex-wrap:wrap;align-content:flex-start;gap:10px}
+    .chip{padding:10px 13px;border-radius:999px;background:var(--accent-soft);color:#005fb8;font-weight:650;font-size:13px}
+
+    .experience{display:grid;gap:16px}
+    .role{
+      display:grid;grid-template-columns:220px 1fr;gap:30px;
+      padding:28px;border-radius:24px;background:var(--surface);border:1px solid var(--line);transition:.22s ease;
+    }
+    .role:hover{transform:translateY(-2px);box-shadow:var(--shadow);background:#fff}
+    .role-meta{color:var(--muted);font-size:14px}
+    .role-meta strong{display:block;color:var(--text);font-size:17px;margin-bottom:4px}
+    .role-main h3{margin:0 0 8px;font-size:25px;letter-spacing:-.03em}
+    .role-main p{margin:0;color:#424245;font-size:16px}
+    .role-main ul{margin:14px 0 0;padding-left:20px;color:#424245}
+    .role-main li+li{margin-top:8px}
+
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .panel{padding:28px;border-radius:24px;background:var(--surface);border:1px solid var(--line)}
+    .panel h3{margin:0 0 18px;font-size:24px;letter-spacing:-.03em}
+    .edu-item+.edu-item,.cert-item+.cert-item{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+    .edu-item strong,.cert-item strong{display:block;font-size:17px}
+    .edu-item span,.cert-item span{display:block;margin-top:4px;color:var(--muted);font-size:14px}
+
+    .contact-card{
+      margin:28px 0 74px;padding:clamp(30px,5vw,58px);border-radius:32px;color:#fff;
+      background:linear-gradient(135deg,#111113 0%,#1b1b1f 55%,#22263a 100%);
+      box-shadow:0 22px 70px rgba(0,0,0,.18)
+    }
+    .contact-card h2{max-width:760px;margin-top:8px}
+    .contact-card p{max-width:700px;color:rgba(255,255,255,.68);font-size:18px}
+    .contact-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+    .contact-link{padding:13px 16px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.13);color:#fff}
+    .contact-link:hover{background:rgba(255,255,255,.16)}
+
+    footer{padding:0 0 36px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:20px}
+
+    @media (max-width: 860px){
+      .nav-links a:not(.nav-cta){display:none}
+      .hero{padding-top:58px}
+      .metrics{grid-template-columns:1fr}
+      .about-card,.two-col{grid-template-columns:1fr}
+      .role{grid-template-columns:1fr;gap:16px}
+      .section-head{align-items:start;flex-direction:column}
+    }
+
+    @media (max-width: 560px){
+      .shell{width:min(calc(100% - 22px), var(--max))}
+      .nav-wrap{padding:10px 0}
+      .nav-cta{padding:9px 13px}
+      .hero{padding-top:46px}
+      h1{font-size:clamp(48px,16vw,72px)}
+      .hero-sub{font-size:21px}
+      section{padding:34px 0}
+      .role,.panel,.metric{padding:22px}
+      footer{flex-direction:column}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      *,*:before,*:after{transition:none!important}
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <div class="shell">
+      <nav aria-label="Primary navigation">
+        <a class="brand" href="#top">VR.</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a class="nav-cta" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell">
+        <div class="eyebrow"><span class="dot" aria-hidden="true"></span> Bengaluru, Karnataka, India</div>
+        <h1>Building <span class="gradient-word">growth engines</span> from zero to one.</h1>
+        <p class="hero-sub">I’m Vamsidhar Reddy — a business development leader and former founder working across B2B SaaS growth, sales strategy, marketing, client onboarding and product management.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="mailto:vamsi.zendynamix@gmail.com">Start a conversation ↗</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/vamsidhar-reddy-894b52303" target="_blank" rel="noreferrer">View LinkedIn</a>
+        </div>
+
+        <div class="metrics" aria-label="Selected profile highlights">
+          <div class="metric"><strong>500+</strong><span>prospects engaged to uncover ground-level pain points</span></div>
+          <div class="metric"><strong>0→1</strong><span>founder mindset applied to revenue, go-to-market and product feedback</span></div>
+          <div class="metric"><strong>B2B SaaS</strong><span>experience across sales, marketing, onboarding and enterprise deployments</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="shell">
+        <div class="section-head">
+          <div><div class="kicker">Profile</div><h2>Commercial thinking with product depth.</h2></div>
+          <p class="section-copy">A concise view of how I work: close to customers, comfortable across functions, and focused on turning market learning into repeatable growth.</p>
+        </div>
+        <div class="about-card">
+          <p>Strategic Growth Lead and former Founder with a rare “0-to-1” mindset. I build full-stack revenue engines for B2B SaaS startups — from Google Ads and SEO systems to enterprise-scale deployments. I use direct customer conversations to identify pain points, influence product development and build the channels and partnerships needed to scale.</p>
+          <div class="chips" aria-label="Core skills">
+            <span class="chip">Product Management</span>
+            <span class="chip">Client Onboarding</span>
+            <span class="chip">B2B Sales</span>
+            <span class="chip">Sales Strategy</span>
+            <span class="chip">Marketing</span>
+            <span class="chip">Business Development</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="shell">
+        <div class="section-head">
+          <div><div class="kicker">Experience</div><h2>From founder-led execution to SaaS growth.</h2></div>
+        </div>
+
+        <div class="experience">
+          <article class="role">
+            <div class="role-meta"><strong>ZenDynamix</strong>Apr 2024 — Present<br>Bengaluru, India</div>
+            <div class="role-main">
+              <h3>Business Development Manager</h3>
+              <p>Managing the revenue engine as the sole sales and marketing operator in a lean startup environment.</p>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-meta"><strong>Foresight Hospitality Pvt Ltd</strong>Dec 2022 — Mar 2024<br>Bengaluru, India</div>
+            <div class="role-main">
+              <h3>Founder</h3>
+              <p>Launched a multi-brand cloud kitchen startup from the ground up, building firsthand operating experience across entrepreneurship, execution and growth.</p>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role-meta"><strong>Advids</strong>Aug 2021 — Sep 2022</div>
+            <div class="role-main">
+              <h3>Client Onboarding & International Sales Executive</h3>
+              <p>Worked across international SaaS sales and animated video solutions for global B2B sectors.</p>
+              <ul>
+                <li>Designed and optimized cold email sequences that secured high-value demos with international stakeholders.</li>
+                <li>Translated complex use cases into industry-specific value propositions through consultative SaaS demos.</li>
+                <li>Managed the transition from Closed-Won to execution, aligning production teams with client expectations.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="shell">
+        <div class="two-col">
+          <div class="panel">
+            <div class="kicker">Education</div>
+            <h3>Academic foundation</h3>
+            <div class="edu-item">
+              <strong>Alliance University</strong>
+              <span>MBA — Business Administration and Management, General · 2018–2020</span>
+            </div>
+            <div class="edu-item">
+              <strong>SRM IST Chennai</strong>
+              <span>Bachelor’s degree — Information Technology</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="kicker">Certifications</div>
+            <h3>Digital growth</h3>
+            <div class="cert-item">
+              <strong>Attract and Engage Customers with Digital Marketing</strong>
+            </div>
+            <div class="cert-item">
+              <strong>Foundations of Digital Marketing and E-commerce</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="shell">
+        <div class="contact-card">
+          <div class="kicker" style="color:#7dc3ff">Contact</div>
+          <h2>Have a growth, GTM or product problem worth solving?</h2>
+          <p>Reach out for conversations around B2B SaaS growth, business development, sales strategy, marketing, onboarding and product-led market learning.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:vamsi.zendynamix@gmail.com">vamsi.zendynamix@gmail.com</a>
+            <a class="contact-link" href="tel:+917338799107">+91 73387 99107</a>
+            <a class="contact-link" href="https://www.linkedin.com/in/vamsidhar-reddy-894b52303" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <footer>
+          <span>© <span id="year"></span> Vamsidhar Reddy</span>
+          <span>Business Development · Growth · Product</span>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
